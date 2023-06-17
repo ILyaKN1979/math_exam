@@ -45,18 +45,22 @@ def start_exam(a, b, z, count):
     return res 
 
 def check_exam(a,b,z,res):
+    s=0
     for i in range(0, len(a)):
         if z[i]=='+':
             if a[i] + b[i] == res[i]:
                 print(f'{i}) Good! :)')
             else:
                 print(f'{i}) Error! :(')
+                s+=1
         else:
             if a[i] - b[i] == res[i]:
-                print(f'{i}) Good! :)') 
+                print(f'{i+1}) Good! :)') 
             else:
-                print(f'{i}) Error! :(') 
-
+                print(f'{i+1}) Error! :(') 
+                s+=1
+    print(f'Total errors = {s} ')
+                
   
 # start exam 
 def main(count):
