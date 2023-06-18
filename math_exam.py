@@ -33,6 +33,28 @@ def generate_questions(start, finish, count):
 
     return a,b,z
 
+def check_exam_new(a,b,res):
+    if z[i]=='+':
+        if a[i] + b[i] == res[i]:
+            return True
+        else:
+            return False
+    elif z[i]=='-':
+        if a[i] - b[i] == res[i]:
+            return True 
+        else:
+            return False
+
+def start_exam_new(a, b, z, count):
+    res = []
+    for i in range(count):
+        s = input(f'{i+1}) {a[i]} {z[i]} {b[i]} = ')
+        while not s.isdigit():
+            print('It is not a number!')
+            s = input(f'{i+1}) {a[i]} {z[i]} {b[i]} = ')
+        res.append([a[i], b[i],int(s),check_exam(a[i], b[i], int(s))])
+    return res 
+
 
 def start_exam(a, b, z, count):
     res = []
@@ -43,6 +65,10 @@ def start_exam(a, b, z, count):
             s = input(f'{i+1}) {a[i]} {z[i]} {b[i]} = ')
         res.append(int(s))
     return res 
+
+
+
+
 
 def check_exam(a,b,z,res):
     s=0
@@ -65,13 +91,14 @@ def check_exam(a,b,z,res):
 # start exam 
 def main(count):
     clear()
+    print('')
+    print('')
+    
     print("Let's start the exam!")
-    print("--------------------")
+    print(f"You have to answer {count} questions.")
     
-    
-    
-    #count = 10
-    
+    print('-----------------')
+
     start_time= time.time()
     
     a,b,z = generate_questions(0, 99, count)
@@ -83,8 +110,10 @@ def main(count):
     
     check_exam(a, b, z, res)
         
+    m=round((time.time() - start_time))//60
+    s=round(time.time() - start_time)%60
     
-    print("You are doing the exam during  %s seconds!" % round((time.time() - start_time)))    
+    print(f'You are doing the exam during {m} minutes and {s} seconds!')    
 
 
 
