@@ -4,6 +4,7 @@
 
 Welcome to the Math Exam Assistant, a Python program designed to help you practice simle arithmetic calculations in a fun and interactive way! Whether you're a student looking to sharpen your math skills or simply curious about testing your mental math abilities, this program is here to make learning enjoyable.
 
+I created this application with the intention of providing my children with a more engaging and efficient way to practice arithmetic problems. The constant task of manually writing out arithmetic exercises on paper had become quite tiresome. Moreover, I firmly believe that introducing a console-based application to the realm of education carries significant advantages.
 ## Features
 
 - **Randomized Questions:** The program generates a set of random arithmetic questions, keeping you on your toes and enhancing your problem-solving abilities.
